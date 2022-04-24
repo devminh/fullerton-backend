@@ -37,6 +37,10 @@ class Bookings {
           type: String,
           required: true,
         },
+        selected_datetime: {
+          type: String,
+          required: false,
+        },
         rejected_reason: {
           type: String,
           default: "",

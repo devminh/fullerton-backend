@@ -65,7 +65,7 @@ class User {
     schema.statics.findByUserName = function (username) {
       return this.findOne({ user_name: username });
     };
-    // schema.plugin(uniqueValidator);
+
     try {
       mongoose.model("users", schema);
     } catch (e) {}

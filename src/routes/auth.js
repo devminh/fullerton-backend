@@ -1,11 +1,15 @@
-'use strict';
-const AUthController = require( '../controllers/AuthController' );
-const express = require( 'express' ),
-    router = express.Router();
+"use strict";
+const AuthController = require("../controllers/AuthController");
+const express = require("express"),
+  router = express.Router();
 
-router.post( '/login', AUthController.login );
-router.get( '/logout', AUthController.checkLogin, AUthController.logout );
-router.post( '/register', AUthController.register );
-router.post( '/changePassword', AUthController.checkLogin, AUthController.changePassword );
+router.post("/login", AuthController.login);
+router.get("/logout", AuthController.checkLogin, AuthController.logout);
+router.post("/register", AuthController.register);
+router.post(
+  "/change-password",
+  AuthController.checkLogin,
+  AuthController.changePassword
+);
 
 module.exports = router;

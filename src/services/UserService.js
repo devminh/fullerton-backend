@@ -1,6 +1,7 @@
 "use strict";
 const { Service } = require("../../system/services/Service");
 const autoBind = require("auto-bind");
+const { HttpResponse } = require("../../system/helpers/HttpResponse");
 
 class UserService extends Service {
   constructor(model) {
@@ -10,6 +11,12 @@ class UserService extends Service {
   }
 
   async updatePassword(id, data) {
+    const user = await this.model.findById(id).select("+password");
+    const passwordMatched = await user.comparePassword(data.current_password);
+
+    if (!passwordMatched) {
+      return { passwordChanged: false, status: "Invalid current password" };
+    }
     try {
       await this.model.findByIdAndUpdate(id, data, { new: true });
       return { passwordChanged: true };
@@ -17,8 +24,6 @@ class UserService extends Service {
       throw errors;
     }
   }
-
-  async registerUser(data) {}
 
   /**
    *
