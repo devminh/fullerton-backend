@@ -14,19 +14,6 @@ const packageJson = require("../../package.json"),
   PATHS = fs.readdirSync(routesPath),
   moduleMapper = [];
 
-const cookieParser = require("cookie-parser");
-const cors = require("cors");
-// const app = express();
-
-router.use(express.json());
-router.use(cookieParser());
-router.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true, //Để bật cookie HTTP qua CORS
-  })
-);
-
 console.log("✔ Mapping routes");
 PATHS.forEach((module) => {
   if (module !== "index.js") {

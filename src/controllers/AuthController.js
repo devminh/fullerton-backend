@@ -22,7 +22,7 @@ class AuthController {
         req.body.password
       );
 
-      await res.status(response.statusCode).json(response);
+      res.status(response.statusCode).json(response);
     } catch (e) {
       next(e);
     }

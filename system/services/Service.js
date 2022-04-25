@@ -1,4 +1,3 @@
-"use strict";
 const mongoose = require("mongoose");
 const autoBind = require("auto-bind");
 const { HttpResponse } = require("../helpers/HttpResponse");

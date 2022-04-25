@@ -1,4 +1,3 @@
-"use strict";
 const { Service } = require("../../system/services/Service");
 const autoBind = require("auto-bind");
 const { HttpResponse } = require("../../system/helpers/HttpResponse");
