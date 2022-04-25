@@ -38,32 +38,6 @@ For Register, Login, Logout use these urls —
     [GET] api/auth/logout
 ```
 
-## Features
-
-1. **Controller, Model & Service oriented architecture**
-
-1. **Auth with JWT & Db Store**
-
-1. **Async/Await support**
-
-1. **User Module**
-
-1. **Post Module** (Sample CRUD)
-
-1. **Media Upload**
-
-1. **Centralized Http Response**
-
-1. **Error Handler**
-
-1. **.env support**
-
-1. **Multi Environment config setup**
-
-1. **Autobind Methods**
-
-1. **Built in Pagination**
-
 ## Directory Structure of the Project
 
 ```
